@@ -1,0 +1,12 @@
+accumulate lists.
+accumulate debug.
+
+run :-
+  interaction Name F Cert,
+  print "Running on problem ", print Name, print ":\n",
+  resolve F Cert.
+
+resolve F Cert :-
+  (entry_point Cert F ; true),
+  term_to_string Cert S,
+  print S.

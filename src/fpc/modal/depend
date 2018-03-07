@@ -1,0 +1,20 @@
+tableaux.lpo: tableaux.mod tableaux.sig ../../kernel/lkf/certificatesLKF.sig ../../utils/lists.sig ../../base.sig ../../syntax/lkf-syntax.sig
+ordinary-sequents.lpo: ordinary-sequents.mod ordinary-sequents.sig lmf-star.sig ../../utils/debug.sig ../../utils/lists.sig ../../kernel/lkf/certificatesLKF.sig ../../base.sig lmf-multifoc.sig ../../syntax/lkf-syntax.sig lmf-singlefoc.sig ../../encodings/modal-encoding.sig ../../syntax/modal-syntax.sig
+nested-sequents.lpo: nested-sequents.mod nested-sequents.sig lmf-singlefoc.sig ../../utils/debug.sig ../../utils/lists.sig ../../kernel/lkf/certificatesLKF.sig ../../syntax/lkf-syntax.sig ../../encodings/modal-encoding.sig ../../base.sig ../../syntax/modal-syntax.sig
+lmfstar-lmf.lpo: lmfstar-lmf.mod lmfstar-lmf.sig ../../kernel/lmf/certificatesLMF.sig ../../kernel/lmf/certificatesLMFStar.sig ../../utils/lists.sig ../../base.sig ../../syntax/lmf-syntax.sig ../../syntax/modal-syntax.sig ../../syntax/lkf-syntax.sig
+lmfs.lpo: lmfs.mod lmfs.sig lmf-lkf.sig ../../kernel/lkf/certificatesLKF.sig ../../kernel/lmf/certificatesLMF.sig ../../utils/lists.sig ../../base.sig ../../syntax/lkf-syntax.sig ../../syntax/lmf-syntax.sig ../../syntax/modal-syntax.sig
+lmf-star.lpo: lmf-star.mod lmf-star.sig lmf-multifoc.sig ../../utils/debug.sig ../../utils/lists.sig ../../kernel/lkf/certificatesLKF.sig ../../base.sig lmf-singlefoc.sig ../../syntax/lkf-syntax.sig ../../encodings/modal-encoding.sig ../../syntax/modal-syntax.sig
+lmf-singlefoc.lpo: lmf-singlefoc.mod lmf-singlefoc.sig ../../kernel/lkf/certificatesLKF.sig ../../syntax/lkf-syntax.sig ../../encodings/modal-encoding.sig ../../utils/lists.sig ../../base.sig ../../syntax/modal-syntax.sig
+lmf-multifoc.lpo: lmf-multifoc.mod lmf-multifoc.sig lmf-singlefoc.sig ../../utils/debug.sig ../../kernel/lkf/certificatesLKF.sig ../../syntax/lkf-syntax.sig ../../encodings/modal-encoding.sig ../../utils/lists.sig ../../base.sig ../../syntax/modal-syntax.sig
+lmf-lkf.lpo: lmf-lkf.mod lmf-lkf.sig ../../kernel/lkf/certificatesLKF.sig ../../kernel/lmf/certificatesLMF.sig ../../utils/lists.sig ../../base.sig ../../syntax/lkf-syntax.sig ../../syntax/lmf-syntax.sig ../../syntax/modal-syntax.sig
+labeled.lpo: labeled.mod labeled.sig ../../kernel/lkf/certificatesLKF.sig ../../utils/lists.sig ../../base.sig ../../syntax/lkf-syntax.sig
+tableaux.lp: tableaux.lpo 
+ordinary-sequents.lp: ordinary-sequents.lpo lmf-star.lpo ../../utils/debug.lpo ../../utils/lists.lpo lmf-multifoc.lpo lmf-singlefoc.lpo
+nested-sequents.lp: nested-sequents.lpo lmf-singlefoc.lpo ../../utils/debug.lpo ../../utils/lists.lpo
+lmfstar-lmf.lp: lmfstar-lmf.lpo 
+lmfs.lp: lmfs.lpo lmf-lkf.lpo
+lmf-star.lp: lmf-star.lpo lmf-multifoc.lpo ../../utils/debug.lpo ../../utils/lists.lpo lmf-singlefoc.lpo
+lmf-singlefoc.lp: lmf-singlefoc.lpo 
+lmf-multifoc.lp: lmf-multifoc.lpo lmf-singlefoc.lpo ../../utils/debug.lpo ../../utils/lists.lpo
+lmf-lkf.lp: lmf-lkf.lpo 
+labeled.lp: labeled.lpo 
