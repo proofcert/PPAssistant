@@ -3,7 +3,7 @@ accumulate debug.
 
 run :-
   interaction Name F Cert,
-  print "Running on problem ", print Name, print ":\n",
+  dprint "Running on problem ", print Name, print ":\n",
   resolve F Cert.
 
 resolve F Cert :-

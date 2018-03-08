@@ -26,7 +26,6 @@ check Cert (foc N) :-
 % store
 check Cert (unfK [C|Rest]) :-
   (isPos C ; isNegAtm C),
-  eigencopy C' C,
   spy "" (store_kc Cert C Indx Cert'),
   inCtxt Indx C => spy "Storing " (check Cert' (unfK Rest)).
 % initial
@@ -56,7 +55,7 @@ check Cert (unfK [A &-& B | Rest]) :-
 % forall
 check Cert (unfK [all B | Theta]) :-
   spy "" (all_kc Cert Cert'),
-  spy "All " (pi w\ (normalize (check (Cert' w) (unfK [B w | Theta] )))). % Teyjus bug doesn perform beta-reduction on inner reducts!!!
+  spy "All " (pi w\ (check (Cert' w) (unfK [B w | Theta] ))). % Teyjus bug doesn perform beta-reduction on inner reducts!!!
 % Units
 check Cert (unfK [t-|_]). % No clerk - justify in the paper ?
 check Cert (unfK [f-|Gamma]) :-  % Fix the name, between Theta, Teta, Gamma !
