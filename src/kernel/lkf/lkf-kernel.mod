@@ -13,9 +13,9 @@ spy ""
 %%%%%%%%%%%%%%%%%%
 
 % decide
-check Cert (unfK nil) :-
-  spy "" (decide_ke Cert Indx Cert'),
-  spy "inContext " (inCtxt Indx P),
+check Cert (unfK []) :-
+  decide_ke Cert Indx Cert',
+  inCtxt Indx P,
   isPos P,
   spy "Deciding " (check Cert' (foc P)).
 % release
@@ -33,8 +33,8 @@ check Cert (foc (p A)) :-
   spy "" (initial_ke Cert Indx),
   spy "Init " (inCtxt Indx (n A)).
 % cut
-check Cert (unfK nil) :-
-  spy "" (cut_ke Cert F CertA CertB),
+check Cert (unfK []) :-
+  cut_ke Cert F CertA CertB,
   negateForm F NF,
   spy "Cut left " (check CertA (unfK [F])),
   spy "Cut right " (check CertB (unfK [NF])).
@@ -54,8 +54,8 @@ check Cert (unfK [A &-& B | Rest]) :-
   spy "And- right " (check CertB (unfK [B | Rest])).
 % forall
 check Cert (unfK [all B | Theta]) :-
-  spy "" (all_kc Cert Cert'),
-  spy "All " (pi w\ (check (Cert' w) (unfK [B w | Theta] ))). % Teyjus bug doesn perform beta-reduction on inner reducts!!!
+  all_kc Cert Cert',
+  pi w\ (check (Cert' w) (unfK [B w | Theta] )).
 % Units
 check Cert (unfK [t-|_]). % No clerk - justify in the paper ?
 check Cert (unfK [f-|Gamma]) :-  % Fix the name, between Theta, Teta, Gamma !
