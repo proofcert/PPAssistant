@@ -11,7 +11,7 @@ entry_point Cert Form :-
 %%%%%%%%%%%%%%%%%%
 
 % decide
-check Cert (unfK nil) :-
+check Cert (unfK []) :-
   decide_ke Cert Indx Cert',
   inCtxt Indx P,
   isPos P,
@@ -31,7 +31,7 @@ check Cert (foc (p A)) :-
   initial_ke Cert Indx,
   inCtxt Indx (n A).
 % cut
-check Cert (unfK nil) :-
+check Cert (unfK []) :-
   cut_ke Cert F CertA CertB,
   negateForm F NF,
   check CertA (unfK [F]),
@@ -53,7 +53,7 @@ check Cert (unfK [A &-& B | Rest]) :-
 % forall
 check Cert (unfK [all B | Theta]) :-
   all_kc Cert Cert',
-  pi w\ normalize (check (Cert' w) (unfK [B w | Theta] )).
+  pi w\ (check (Cert' w) (unfK [B w | Theta] )).
 % Units
 check Cert (unfK [t-|_]). % No clerk - justify in the paper ?
 check Cert (unfK [f-|Gamma]) :-  % Fix the name, between Theta, Teta, Gamma !

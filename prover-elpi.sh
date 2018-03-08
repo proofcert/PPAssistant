@@ -26,12 +26,12 @@ if [ -z "$NO_PREPARE" ]; then
   fi
 fi
 
-#export CMD="/home/shaolin/Documents/software/elpi/elpi${VARIANT} -test ${MODNAME}.elpi"
 export CMD="elpi${VARIANT} -test ${MODNAME}.elpi"
+echo $CMD
 if [ -z "$NO_RUN" ]; then
     cd $SRCDIR && \
     source TJPATH && \
-    $CMD && \
-    rm -f $RUNNER_MOD_TARGET
+    $CMD
+#    rm -f $RUNNER_MOD_TARGET
 fi
 

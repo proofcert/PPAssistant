@@ -4,7 +4,7 @@ decide_ke (interact (unary (decide none) terminate) [] (choose_decide) _) _ _.
 decide_ke (interact (unary (decide F) L) [auto|Com] Choice FI) F (interact L Com Choice (u FI)).
 decide_ke (interact (unary (decide F) L) [F|Com] Choice FI) F (interact L Com Choice (u FI)).
 
-store_kc (interact (unary (store F I) L) Com [store FI F I|Choice] FI) F FI (interact L Com Choice (u FI)).
+store_kc (interact (unary (store F I) L) Com [store FI F I|Choice] FI) F I (interact L Com Choice (u FI)).
 
 release_ke (interact (unary release L) Com Choice FI) (interact L Com Choice (u FI)).
 
