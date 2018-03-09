@@ -1,6 +1,5 @@
 % 29 july 2014.
 module lkf-kernel.
-accumulate lists.
 
 % Entry point
 entry_point Cert Form :-

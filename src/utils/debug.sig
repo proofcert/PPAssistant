@@ -1,6 +1,6 @@
 % 29 july 2014.
 sig debug.
-accum_sig lists.
+
 type announce o -> o.
 type spy string -> o -> o.
 

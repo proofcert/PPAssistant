@@ -1,9 +1,7 @@
 % 29 july 2014.
 sig lkf-syntax.
 
-accum_sig base.
-
-kind atm, seq, choice, direction type.
+kind term, atm, meq, choice, direction type.
 
 type left-first, right-first direction.
 type inCtxt index -> form -> o.
@@ -27,8 +25,8 @@ type !-!     form -> form -> form.
 type !+!     form -> form -> form.
 
 /* Quantification */
-type some   (A -> form) -> form.
-type all    (A -> form) -> form.
+type some   (term -> form) -> form.
+type all    (term -> form) -> form.
 
 /* Units */
 type f+,f-, t+,t- 	form.

@@ -1,5 +1,4 @@
 module debug.
-accumulate lists.
 
 type bracket          string -> string -> o -> string -> o.  % Auxiliary
 
