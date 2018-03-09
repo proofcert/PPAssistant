@@ -51,10 +51,10 @@ check Cert (unfK [A &-& B | Rest]) :-
   check CertB (unfK [B | Rest]).
 % forall
 check Cert (unfK [all B | Theta]) :-
-  all_kc Cert Cert',
+  all_kc Cert (all B) Cert',
   pi w\ (check (Cert' w) (unfK [B w | Theta] )).
 % Units
-check Cert (unfK [t-|_]). % No clerk - justify in the paper ?
+check Cert_ (unfK [t-|_]). % No clerk - justify in the paper ?
 check Cert (unfK [f-|Gamma]) :-  % Fix the name, between Theta, Teta, Gamma !
   false_kc Cert Cert',
   check Cert' (unfK Gamma).

@@ -53,10 +53,10 @@ check Cert (unfK [A &-& B | Rest]) :-
   spy "And- right " (check CertB (unfK [B | Rest])).
 % forall
 check Cert (unfK [all B | Theta]) :-
-  spy "" (all_kc Cert Cert'),
+  spy "" (all_kc Cert (all B) Cert'),
   spy "All " (pi w\ (check (Cert' w) (unfK [B w | Theta] ))). % Teyjus bug doesn perform beta-reduction on inner reducts!!!
 % Units
-check Cert (unfK [t-|_]). % No clerk - justify in the paper ?
+check Cert_ (unfK [t-|_]). % No clerk - justify in the paper ?
 check Cert (unfK [f-|Gamma]) :-  % Fix the name, between Theta, Teta, Gamma !
   spy "" (false_kc Cert Cert'),
   spy "False " (check Cert' (unfK Gamma)).
