@@ -1,4 +1,5 @@
 accumulate debug.
+accumulate lkf-kernel.
 
 run :-
   interaction Name F Cert,

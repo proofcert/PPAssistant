@@ -5,10 +5,10 @@ MAKE=make
 SRCS=$(wildcard *.mod)
 OBJS=$(SRCS:.mod=.lp)
 
-export TJPATH = kernel/lkf::utils:fpc/interactive:tests/interactive
+export TJPATH=.:fpc/interactive:tests/interactive:kernel/lkf:utils:tests/interactive
 
 .PHONY: all
-all: compile
+all:	compile
 
 compile: compile_inner $(OBJS)
 

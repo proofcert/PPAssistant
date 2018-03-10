@@ -1,10 +1,10 @@
 % 29 july 2014.
 sig lkf-syntax.
 
-kind term, atm, meq, choice, direction type.
+kind cert, index, form, seq, term, atm, meq, choice, direction type.
 
 type left-first, right-first direction.
-type inCtxt index -> form -> prop.
+type inCtxt index -> form -> o.
 type left, right choice.
 
 /* Negative Delay */
@@ -42,5 +42,5 @@ type unfK list form -> seq.
 type foc form -> seq.
 type isNegForm, isNegAtm,
      isPosForm, isPosAtm, isCompForm, isCompNeg, isCompPos, isAtm,
-     isNeg, isPos, isPosUM	  form -> prop.
-type negateForm form -> form -> prop.
+     isNeg, isPos, isPosUM	  form -> o.
+type negateForm form -> form -> o.

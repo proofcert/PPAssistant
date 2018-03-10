@@ -1,6 +1,6 @@
 % 29 july 2014.
 sig debug.
 
-type announce prop -> prop.
-type spy string -> prop -> prop.
-type bracket          string -> string -> prop -> string -> prop.  % Auxiliary
+type announce o -> o.
+type spy string -> o -> o.
+type bracket          string -> string -> o -> string -> o.  % Auxiliary

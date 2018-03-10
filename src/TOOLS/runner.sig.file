@@ -1,2 +1,6 @@
-type run prop.
-type problem  string -> form -> cert -> prop.
+accum_sig lkf-kernel.
+
+type run o.
+
+type resolve form -> cert -> o.
+

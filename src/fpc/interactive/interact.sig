@@ -2,9 +2,11 @@ sig interact.
 
 accum_sig certificatesLKF.
 
-kind proof, inference, command, feedback, eigens type.
+kind proof, inference, feedback, eigen  type.
 
-type interact proof -> list command -> list feedback -> findex -> list eigen -> cert.
+type interaction string -> form -> cert -> o.
+
+type interact proof -> list index -> list feedback -> index -> list eigen -> cert.
 
 type unary inference -> proof -> proof.
 type axiom inference -> proof.
@@ -12,7 +14,7 @@ type binary inference -> proof -> proof -> proof.
 type leaf proof.
 
 type decideI index -> inference.
-type storeI index -> inference.
+type storeI index -> form -> inference.
 type releaseI inference.
 type initialI index -> inference.
 type orNegI form -> inference.
@@ -25,18 +27,17 @@ type no_term term.
 
 type choose_some feedback.
 type choose_decide feedback.
-type eigen_var findex -> form -> feedback.
+type eigen_var index -> form -> feedback.
 
-type eigen findex -> term -> eigen.
+type eigen index -> term -> eigen.
 
-type auto command.
+type auto index.
 
-type e findex.
-type u findex -> findex.
-type l findex -> findex.
-type r findex -> findex.
+type e index.
+type u index -> index.
+type l index -> index.
+type r index -> index.
 
-type formula findex -> index -> feedback.
+type formula index -> index -> feedback.
 
-type branch list command -> list command -> command.
-
+type branch list index -> list index -> index.
