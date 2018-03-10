@@ -14,13 +14,13 @@ type binary inference -> proof -> proof -> proof.
 type leaf proof.
 
 type decideI index -> inference.
-type storeI index -> form -> inference.
+type storeI index -> inference.
 type releaseI inference.
 type initialI index -> inference.
-type orNegI form -> inference.
-type andNegI form -> inference.
-type allI inference.
-type someI A -> inference.
+type orNegI index -> inference.
+type andNegI index -> inference.
+type allI index -> inference.
+type someI index -> inference.
 
 type no_index index.
 type no_term term.
