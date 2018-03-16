@@ -1,15 +1,12 @@
 accumulate debug.
 accumulate lkf-kernel.
+accumulate interact.
 
 run :-
-  interaction Name F Cert,
-  output std_out "Running on problem ",
-  output std_out Name,
-  output std_out ":\n",
-  resolve F Cert.
-
-resolve F Cert :-
+  interaction F Cert,
   (entry_point Cert F ; true),
   term_to_string Cert S,
   output std_out S,
   output std_out "\n".
+
+interaction

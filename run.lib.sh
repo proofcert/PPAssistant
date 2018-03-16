@@ -22,7 +22,7 @@ rm -f $RUNNER_SIG_TARGET
 
 function parse_args() {
 ARGS=()
-while [ ! -z "$1" ]; do
+while [ ! -z "$1" "$2" ]; do
 	case $1 in
 	--module-name)
 		shift
@@ -39,6 +39,7 @@ while [ ! -z "$1" ]; do
 	;;
 	*)
 		ARGS+="$1"
+		ARGS+="$2"
 	;;
 	esac
 	shift

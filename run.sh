@@ -12,9 +12,9 @@ if [ -z "$NO_PREPARE" ]; then
   cleanup
 
   echo -e "module  ${MODNAME}.\\n" >> $RUNNER_MOD_TARGET
-  echo " (${ARGS[0]}) (interact L_ ${ARGS[1]} _ e [])." >> $RUNNER_MOD_TARGET
-
   `cat $RUNNER_MOD_BASE >> $RUNNER_MOD_TARGET`
+  echo " ($1) (interact L_ $2 _ e [])." >> $RUNNER_MOD_TARGET
+
   echo 'main :- run.' >> $RUNNER_MOD_TARGET
 fi
 

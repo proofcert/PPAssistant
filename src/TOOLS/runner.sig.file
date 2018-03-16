@@ -1,6 +1,8 @@
 accum_sig lkf-kernel.
+accum_sig lkf-syntax.
+accum_sig interact.
 
 type run o.
 
-type resolve form -> cert -> o.
+type interaction form -> cert -> o.
 

@@ -1,0 +1,2 @@
+ ((n (g a)) !-! (p (g a)))
+ ((all x\ (n (g x))) !-! (some x\ (p (g x))))
