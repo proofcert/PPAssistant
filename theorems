@@ -1,3 +1,1 @@
- (n (g a)) !-! (p (g a))
- (all x\ (n (g x))) !-! (some x\ (p (g x)))
- some x\ (n (drink x)) !-! (all y\ (drink y))
+(((dia (-- p1)) !-! (box (++ q1))) !-! (dia ((++ p1) &-& (-- q1))))

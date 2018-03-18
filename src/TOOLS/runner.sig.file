@@ -1,5 +1,5 @@
-accum_sig lkf-kernel.
-accum_sig lkf-syntax.
+accum_sig lmf-kernel.
+accum_sig lmf-syntax.
 accum_sig interact.
 
 type run o.

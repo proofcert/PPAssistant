@@ -1,6 +1,6 @@
 sig interact.
 
-accum_sig certificatesLKF.
+accum_sig certificatesLMF.
 
 kind proof, inference, feedback, eigen  type.
 
@@ -19,8 +19,8 @@ type releaseI inference.
 type initialI index -> inference.
 type orNegI index -> inference.
 type andNegI index -> inference.
-type allI index -> inference.
-type someI index -> inference.
+type boxI index -> inference.
+type diaI index -> inference.
 
 type no_index index.
 type no_term term.
@@ -29,7 +29,7 @@ type choose_some feedback.
 type choose_decide feedback.
 type eigen_var index -> form -> feedback.
 
-type eigen index -> term -> eigen.
+type eigen index -> label -> eigen.
 
 type auto index.
 

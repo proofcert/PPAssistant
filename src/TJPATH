@@ -1,1 +1,1 @@
-export TJPATH=.:fpc/interactive:tests/interactive:kernel/lkf:utils:tests/interactive
+export TJPATH=.:fpc/interactive:tests/interactive:kernel/lmf:utils:tests/interactive

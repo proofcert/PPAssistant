@@ -25,23 +25,21 @@ initial_ke (interact (axiom (initialI I)) [] [] _ _) I.
 
 orNeg_kc (interact (unary (orNegI FI) L) Com Choice FI E) F (interact L Com Choice (u FI) E).
 
-andNeg_kc (interact (binary (andNegI FI) L1 L2) [branch LC RC] Choice FI E) F (interact L1 LC Choice (l FI) E) (interact L2 RC Choice (r FI) E).
+andNeg_kc (interact (binary (andNegI FI) L1 L2) Com Choice FI E) F (interact L1 Com Choice (l FI) E) (interact L2 Com Choice (r FI) E).
 
-all_kc (interact (unary (allI FI) L) Com Choice FI E) F (Eigen\ (interact L) Com Choice (u FI) [eigen FI Eigen| E]) :-
-  output std_out "Using eigen variable ",
+box_kc (interact (unary (boxI FI) L) Com Choice FI E) F (Eigen\ (interact L) Com Choice (u FI) [eigen FI Eigen| E]) :-
+  output std_out "Using world variable ",
   term_to_string FI S1,
   output std_out S1,
   output std_out "\n".
 
-some_ke (interact (unary (someI no_index) leaf) [] [choose_some] _ _) _ _ :- !,
-  output std_out "You have to choose the term to use for instatiation",
+dia_ke (interact (unary (diaI no_index) leaf) [] [choose_some] _ _) F _ _ :- !,
+  output std_out "You have to choose the world to use for instatiation for the formula: ",
+  term_to_string F S1,
+  output std_out S1,
   output std_out "\n", fail.
 
-%TODO problem is that after deciding (i think) on the whole formula and storing, it never tries to decide again on the whole formula.
-%Why?
-
-%some_ke (interact (unary (someI FI) L) [T|Com] Choice FI E) T (interact L Com Choice (u FI) E) :- !.
-some_ke (interact (unary (someI FI) L) [auto|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
+dia_ke (interact (unary (diaI FI) L) [auto|Com] Choice FI E) _ T (interact L Com Choice (u FI) E) :-
   member (eigen _ T) E.
-some_ke (interact (unary (someI FI) L) [EI|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
+dia_ke (interact (unary (diaI FI) L) [EI|Com] Choice FI E) _ T (interact L Com Choice (u FI) E) :-
   member (eigen EI T) E.

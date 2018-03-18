@@ -1,9 +1,8 @@
-% 29 july 2014.
-sig lkf-kernel.
-accum_sig certificatesLKF.
-accum_sig lkf-syntax.
+% Copyright Tomer Libal 2018
+
+sig lmf-kernel.
+accum_sig certificatesLMF.
+accum_sig lmf-syntax.
 
 type check cert -> seq -> o.
-type entry_point cert -> form -> o.
-type eager_normalize form -> form -> o.
-type eigencopy term -> term -> o.
+type entry_point cert -> lform -> o.

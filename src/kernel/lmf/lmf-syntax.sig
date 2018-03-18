@@ -1,18 +1,11 @@
-% 29 july 2014.
-sig lkf-syntax.
+% Copyright Tomer Libal 2018
+sig lmf-syntax.
 
-kind cert, index, form, seq, term, atm, meq, choice, direction type.
+kind cert, index, form, lform, seq, atm, label, choice type.
 
-type left-first, right-first direction.
-type inCtxt index -> form -> o.
+type inCtxt index -> lform -> o.
 type left, right choice.
-
-/* Negative Delay */
-type d-     form -> form.
-
-/* Positive Delay */
-type d+     form -> form.
-
+type lform label -> form -> lform.
 
 /* Negative conjunction */
 type &-&    form -> form -> form.
@@ -25,21 +18,18 @@ type !-!     form -> form -> form.
 type !+!     form -> form -> form.
 
 /* Quantification */
-type some   (term -> form) -> form.
-type all    (term -> form) -> form.
-
-/* Units */
-type f+,f-, t+,t- 	form.
+type dia   form -> form.
+type box   form -> form.
 
 infixr &-&, &+& 136.
 infixr !-!,!+! 135.
 
 
-type n, p      	       	  atm -> form.
+type n, p atm -> form.
 
 
-type unfK list form -> seq.
-type foc form -> seq.
+type unfK list lform -> seq.
+type foc lform -> seq.
 type isNegForm, isNegAtm,
      isPosForm, isPosAtm, isCompForm, isCompNeg, isCompPos, isAtm,
      isNeg, isPos, isPosUM	  form -> o.
