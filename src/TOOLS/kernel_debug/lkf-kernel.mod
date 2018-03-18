@@ -24,6 +24,10 @@ check Cert (foc N) :-
 check Cert (unfK [C|Rest]) :-
   (isPos C ; isNegAtm C),
   store_kc Cert C Indx Cert',
+  term_to_string Rest S,
+  output std_out "Rest is: ",
+  output std_out S,
+  output std_out "\n",
   inCtxt Indx C => check Cert' (unfK Rest).
 % initial
 check Cert (foc (p A)) :-
