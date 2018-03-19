@@ -8,7 +8,8 @@ decide_ke (interact (unary (decideI no_index) leaf) [] [choose_decide] _ _) _ _ 
   output std_out "\n", fail.
 
 decide_ke (interact (unary (decideI I) L) [auto|Com] Choice FI E) I (interact L Com Choice (u FI) E).
-decide_ke (interact (unary (decideI I) L) [I|Com] Choice FI E) I (interact L Com Choice (u FI) E).
+decide_ke (interact (unary (decideI I) L) [I|Com] Choice FI E) I (interact L Com Choice (u FI) E) :-
+  counter "run" N, print "Debug from " N.
 
 store_kc (interact (unary (storeI I) L) Com Choice I E) F I (interact L Com Choice (u I) E) :-
   output std_out "Adding to context formula ",
@@ -34,14 +35,17 @@ all_kc (interact (unary (allI FI) L) Com Choice FI E) F (Eigen\ (interact L) Com
   output std_out "\n".
 
 some_ke (interact (unary (someI no_index) leaf) [] [choose_some] _ _) _ _ :- !,
-  output std_out "You have to choose the term to use for instatiation",
+  output std_out "You have to choose the term to use for instantiation",
   output std_out "\n", fail.
 
-%TODO problem is that after deciding (i think) on the whole formula and storing, it never tries to decide again on the whole formula.
-%Why?
+some_ke (interact (unary (someI FI) L) [T|Com] Choice FI E) T' (interact L Com Choice (u FI) E) :-
+  apply_vars T E T'.
 
-%some_ke (interact (unary (someI FI) L) [T|Com] Choice FI E) T (interact L Com Choice (u FI) E) :- !.
-some_ke (interact (unary (someI FI) L) [auto|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
-  member (eigen _ T) E.
-some_ke (interact (unary (someI FI) L) [EI|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
-  member (eigen EI T) E.
+apply_vars T [] T.
+apply_vars T [eigen _ X|L] T' :-
+  apply_vars (T X) L T'.
+
+%some_ke (interact (unary (someI FI) L) [auto|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
+%  member (eigen _ T) E.
+%some_ke (interact (unary (someI FI) L) [EI|Com] Choice FI E) T (interact L Com Choice (u FI) E) :-
+%  member (eigen EI T) E.

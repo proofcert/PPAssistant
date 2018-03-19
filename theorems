@@ -1,3 +1,4 @@
  (n (g a)) !-! (p (g a))
  (all x\ (n (g x))) !-! (some x\ (p (g x)))
- some x\ (n (drink x)) !-! (all y\ (drink y))
+ some x\ (n (drink x)) !-! (all y\ (p (drink y)))
+'some x\ (n (drink x)) !-! (all y\ (p (drink y)))' '[e,a,e,(x\ x), u (u (u (u (u (u (u e))))))]'
