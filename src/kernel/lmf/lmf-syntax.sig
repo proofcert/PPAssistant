@@ -17,9 +17,13 @@ type &+&    form -> form -> form.
 type !-!     form -> form -> form.
 type !+!     form -> form -> form.
 
-/* Quantification */
+/* Modalities */
 type dia   form -> form.
 type box   form -> form.
+
+/* Quantification */
+type some   (term -> form) -> form.
+type all    (term -> form) -> form.
 
 infixr &-&, &+& 136.
 infixr !-!,!+! 135.

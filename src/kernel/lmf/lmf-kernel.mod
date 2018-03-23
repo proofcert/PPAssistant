@@ -49,6 +49,10 @@ check Cert (unfK [lform L (A &-& B) | Rest]) :-
 check Cert (unfK [lform L (box B) | Theta]) :-
   box_kc Cert (lform L (box B)) Cert',
   pi w\ check (Cert' w) (unfK [lform w B | Theta] ).
+% forall
+check Cert (unfK lform L [all B | Theta]) :-
+  all_kc Cert (all B) Cert',
+  pi w\ (check (Cert' w) (unfK [lform L (B w) | Theta] )).
 
 %%%%%%%%%%%%%%%%%%%
 % Synchronous Rules
@@ -59,10 +63,14 @@ check Cert (lform L (foc (A !+! B))) :-
   orPos_ke Cert (lform L (A !+! B)) Choice Cert',
   ((Choice = left,  check Cert' (foc (lform L A)));
    (Choice = right, check Cert' (foc (lform L B)))).
-% quantifers
+% modality
 check Cert (foc (lform L (dia B))) :-
   dia_ke Cert (lform L (dia B)) T Cert',
   check Cert' (foc (lform T B)).
+% quantifier
+check Cert (foc (some B)) :-
+  some_ke Cert T Cert',
+  check Cert' (foc (B T)).
 
 %%%%%%%%%%%
 % Utilities
