@@ -13,9 +13,6 @@ RUNNER_SIG_TARGET=$SRCDIR/${MODNAME}.sig
 }
 
 function cleanup(){
-rm -f $SRCDIR/kernel/lmf/lmf-kernel.lpo $SRCDIR/kernel/lmf/lmf-kernel.lp $SRCDIR/kernel/lmf/lmf-kernel.mod
-cp $TOOLS/kernel_debug/lmf-kernel.mod$DEBUG $SRCDIR/kernel/lmf/lmf-kernel.mod
-
 rm -f $RUNNER_MOD_TARGET
 rm -f $RUNNER_SIG_TARGET
 }
