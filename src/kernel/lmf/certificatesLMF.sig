@@ -13,3 +13,5 @@ type dia_ke					cert -> lform -> label -> cert -> o.
 type andNeg_kc			cert -> lform -> cert -> cert -> o.
 type orNeg_kc 			cert -> lform -> cert -> o.
 type orPos_ke  			cert -> lform -> choice -> cert -> o.
+type all_kc					cert -> lform -> (term -> cert) -> o.
+type some_ke				cert -> lform -> term -> cert -> o.

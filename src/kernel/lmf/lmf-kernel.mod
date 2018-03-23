@@ -68,9 +68,9 @@ check Cert (foc (lform L (dia B))) :-
   dia_ke Cert (lform L (dia B)) T Cert',
   check Cert' (foc (lform T B)).
 % quantifier
-check Cert (foc (some B)) :-
-  some_ke Cert T Cert',
-  check Cert' (foc (B T)).
+check Cert (foc (lform L (some B))) :-
+  some_ke Cert (lform L (some B)) T Cert',
+  check Cert' (foc (lform L (B T))).
 
 %%%%%%%%%%%
 % Utilities

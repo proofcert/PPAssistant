@@ -6,7 +6,7 @@ kind proof, inference, feedback, eigen  type.
 
 type interaction string -> form -> cert -> o.
 
-type interact proof -> list index -> list feedback -> index -> list eigen -> cert.
+type interact proof -> list index -> list feedback -> index -> list eigen -> list eigen -> cert.
 
 type unary inference -> proof -> proof.
 type axiom inference -> proof.
