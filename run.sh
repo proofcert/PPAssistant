@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright (C) 2018 Tomer Libal
 
-source prover.lib.sh
+source run.lib.sh
 
 parse_args "$@"
 init
