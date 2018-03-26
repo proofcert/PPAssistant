@@ -50,7 +50,7 @@ check Cert (unfK [lform L (box B) | Theta]) :-
   box_kc Cert (lform L (box B)) Cert',
   pi w\ check (Cert' w) (unfK [lform w B | Theta] ).
 % forall
-check Cert (unfK lform L [all B | Theta]) :-
+check Cert (unfK [lform L (all B) | Theta]) :-
   all_kc Cert (all B) Cert',
   pi w\ (check (Cert' w) (unfK [lform L (B w) | Theta] )).
 
@@ -78,10 +78,12 @@ check Cert (foc (lform L (some B))) :-
 
 isNegForm (_ &-& _).
 isNegForm (_ !-! _).
-isNegForm (box_).
+isNegForm (box _).
+isNegForm (all _).
 isPosForm (_ &+& _).
 isPosForm (_ !+!  _).
 isPosForm (dia _).
+isPosForm (some _).
 
 
 isNegAtm (lform _ (n _)).
