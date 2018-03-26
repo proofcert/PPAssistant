@@ -1,2 +1,4 @@
 '(((dia (n p1)) !-! (box (p q1))) !-! (dia ((p p1) &-& (n q1))))'
 '((some x\ dia (n (q x))) !-! (box (all x\ (p (q x)))))'
+'((all x\ box (n (q x))) !-! (dia (some x\ (p (q x)))))' '[auto,auto,(x\ x)]'
+
