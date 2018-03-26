@@ -1,1 +1,2 @@
 '(((dia (n p1)) !-! (box (p q1))) !-! (dia ((p p1) &-& (n q1))))'
+'((exists x\ dia (n (q x))) !-! (box (all x\ (p (q x)))))'
