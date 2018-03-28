@@ -1,5 +1,5 @@
 '(((dia (n p1)) !-! (box (p q1))) !-! (dia ((p p1) &-& (n q1))))'
 '((some x\ dia (n (q x))) !-! (box (all x\ (p (q x)))))'
 '((all x\ box (n (q x))) !-! (dia (some x\ (p (q x)))))' '[auto,auto,(x\ x)]'
-'some x\ (n (drink x)) !-! (all y\ (p (drink y)))' '[e,a,e,(x\ x), u (u (u (u (u (u (u e))))))]'
+'*some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[e,a,e,(x\ x), u (u (u (u (u (u (u e))))))]'
 
