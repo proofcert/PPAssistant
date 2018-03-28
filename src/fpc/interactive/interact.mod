@@ -3,8 +3,11 @@ module interact.
 accumulate lists.
 accum_sig interact.
 
-decide_ke (interact (unary (decideI no_index) leaf) [] [choose_decide] _ _ _) _ _ :- !,
+decide_ke (interact (unary (decideI no_index) leaf) [] [choose_decide] FI _ _) _ _ :- !,
   output std_out "You have to choose an index of a formula to decide on from the context",
+  output std_out "\nAt index: ",
+  term_to_string FI S2,
+  output std_out S2,
   output std_out "\n", fail.
 
 decide_ke (interact (unary (decideI I) L) [auto|Com] Choice FI E1 E2) I (interact L Com Choice (u FI) E1 E2).
@@ -33,10 +36,13 @@ box_kc (interact (unary (boxI FI) L) Com Choice FI E1 E2) F (Eigen\ (interact L)
   output std_out S1,
   output std_out "\n".
 
-dia_ke (interact (unary (diaI no_index) leaf) [] [choose_some] _ _ _) F _ _ :- !,
+dia_ke (interact (unary (diaI no_index) leaf) [] [choose_some] FI _ _) F _ _ :- !,
   output std_out "You have to choose the world to use for instatiation for the formula: ",
   term_to_string F S1,
   output std_out S1,
+  output std_out "\nAt index: ",
+  term_to_string FI S2,
+  output std_out S2,
   output std_out "\n", fail.
 
 dia_ke (interact (unary (diaI FI) L) [auto|Com] Choice FI E1 E2) _ T (interact L Com Choice (u FI) E1 E2) :-
@@ -48,10 +54,13 @@ all_kc (interact (unary (allI FI) L) Com Choice FI E1 E2) F (Eigen\ (interact L)
   output std_out S1,
   output std_out "\n".
 
-some_ke (interact (unary (someI no_index) leaf) [] [choose_some] _ _ _) F _ _ :- !,
+some_ke (interact (unary (someI no_index) leaf) [] [choose_some] FI _ _) F _ _ :- !,
   output std_out "You have to choose the term to use for instantiation: ",
   term_to_string F S1,
   output std_out S1,
+  output std_out "\nAt index: ",
+  term_to_string FI S2,
+  output std_out S2,
   output std_out "\n", fail.
 
 some_ke (interact (unary (someI FI) L) [var|Com] Choice FI E1 E2) _ _ (interact L Com Choice (u FI) E1 E2) :- !.
