@@ -54,6 +54,8 @@ some_ke (interact (unary (someI no_index) leaf) [] [choose_some] _ _ _) F _ _ :-
   output std_out S1,
   output std_out "\n", fail.
 
+some_ke (interact (unary (diaI FI) L) [var|Com] Choice FI E1 E2) _ _ (interact L Com Choice (u FI) E1 E2) :- !.
+
 some_ke (interact (unary (someI FI) L) [T|Com] Choice FI E1 E2) _ T' (interact L Com Choice (u FI) E1 E2) :-
   apply_vars T E2 T'.
 
