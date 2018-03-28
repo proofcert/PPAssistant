@@ -4,5 +4,6 @@
 '(some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[e,a,e,(x\ x), u (u (u (u (u (u (u e))))))]'
 '(some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[auto,a,auto,(x\x),auto]'
 '(some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[auto,var,auto,(x\x),auto]'
+'(some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[auto,var,auto,var,auto]'
 
 
