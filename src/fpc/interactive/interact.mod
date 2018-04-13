@@ -7,7 +7,6 @@ decide_ke (interact (unary (decideI no_index) leaf) [] _ _) _ _ :- !,
   output std_out "You have to choose an index of a formula to decide on from the context",
   output std_out "\n", fail.
 
-decide_ke (interact (unary (decideI I) L) [auto|Com] FI E) I (interact L Com (u FI) E).
 decide_ke (interact (unary (decideI I) L) [I|Com] FI E) I (interact L Com (u FI) E).
 
 store_kc (interact (unary (storeI I) L) Com I E) F I (interact L Com (u I) E) :-

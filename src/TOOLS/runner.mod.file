@@ -1,6 +1,7 @@
 accumulate debug.
 accumulate lkf-kernel.
 accumulate interact.
+accumulate tactic.
 
 run :-
   interaction F Cert,
