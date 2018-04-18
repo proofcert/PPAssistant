@@ -48,7 +48,7 @@ check Cert (unfK [lform L (A &-& B) | Rest]) :-
 % box
 check Cert (unfK [lform L (box B) | Theta]) :-
   box_kc Cert (lform L (box B)) Cert',
-  pi w\ check (Cert' w) (unfK [lform w B | Theta] ).
+  pi w\ rel L w => check (Cert' w) (unfK [lform w B | Theta] ).
 % forall
 check Cert (unfK [lform L (all B) | Theta]) :-
   all_kc Cert (all B) Cert',
@@ -66,6 +66,7 @@ check Cert (lform L (foc (A !+! B))) :-
 % modality
 check Cert (foc (lform L (dia B))) :-
   dia_ke Cert (lform L (dia B)) T Cert',
+  rel L T,
   check Cert' (foc (lform T B)).
 % quantifier
 check Cert (foc (lform L (some B))) :-
