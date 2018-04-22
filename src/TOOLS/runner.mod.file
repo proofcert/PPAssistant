@@ -1,4 +1,5 @@
 accumulate lmf-kernel.
+accumulate tactics.
 accumulate interact.
 
 run :-
