@@ -32,6 +32,11 @@ check Cert (foc (lform L (p A))) :-
   initial_ke Cert Indx,
   inCtxt Indx (lform L (n A)).
 
+% seriality
+check Cert (foc (lform L (dia B))) :-
+  serial_kc Cert (lform L (dia B)) Cert',
+  pi w\ rel L w => check (Cert' w) (foc (lform L (dia B)) ).
+
 %%%%%%%%%%%%%%%%%%%%
 % Asynchronous Rules
 %%%%%%%%%%%%%%%%%%%%

@@ -4,6 +4,10 @@ accumulate interact.
 
 run :-
   interaction F Cert,
+  output std_out "Trying to prove formula: ",
+  term_to_string F S1,
+  output std_out S1,
+  output std_out "\n",
   (entry_point Cert F ; true),
   term_to_string Cert S,
   output std_out S,

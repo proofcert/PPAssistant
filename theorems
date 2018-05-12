@@ -8,4 +8,5 @@
 '(some x\ (n (drink x)) !-! (all y\ (p (drink y))))' '[auto,var,auto,var,auto]'
 '(box (all x\ (n (q x))) !-! (some x\ (dia (p (q x)))))' '[auto,var,world]'
 '(some x\ ((p (f x)) &-& (dia (n (g x)))) !-! ((some x\ (n (f x))) !-! (box (all x\ (p (g x))))))'
+'(dia (p dog)) !-! ((n dog) &-& dia (p sign)) !-! ((p dog) &-& dia (n sign)) !-! (n dog) !-! (box (p sign))'
 

@@ -10,6 +10,7 @@ type store_kc				cert -> lform -> index -> cert -> o.
 type initial_ke			cert -> index -> o.
 type box_kc					cert -> lform -> (label -> cert) -> o.
 type dia_ke					cert -> lform -> label -> cert -> o.
+type serial_kc			cert -> lform -> (label -> cert) -> o.
 type andNeg_kc			cert -> lform -> cert -> cert -> o.
 type orNeg_kc 			cert -> lform -> cert -> o.
 type orPos_ke  			cert -> lform -> choice -> cert -> o.

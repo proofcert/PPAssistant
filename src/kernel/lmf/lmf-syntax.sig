@@ -26,7 +26,7 @@ type some   (term -> form) -> form.
 type all    (term -> form) -> form.
 
 infixr &-&, &+& 136.
-infixr !-!,!+! 135.
+infixr !-!,!+! 136.
 
 
 type n, p atm -> form.
