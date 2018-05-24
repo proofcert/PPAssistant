@@ -29,6 +29,18 @@ initial_ke (interact (axiom (initialI I)) Com Com  _ _ _) I :-
   output std_out S1,
   output std_out "\n".
 
+serial_kc (interact (unary (boxI FI) L) [] OCom FI E1 E2) F _ :-
+  output std_out "Should I apply seriality on ",
+  term_to_string F S1,
+  output std_out S1,
+  output std_out "\n", fail.
+
+serial_kc (interact (unary (boxI FI) L) [serial|Com] OCom FI E1 E2) F (Eigen\ (interact L) Com OCom (u FI) [eigen FI Eigen| E1] E2) :-
+  output std_out "Using world variable ",
+  term_to_string FI S1,
+  output std_out S1,
+  output std_out "\n".
+
 orNeg_kc (interact (unary (orNegI FI) L) Com OCom FI E1 E2) F (interact L Com OCom (u FI) E1 E2).
 
 andNeg_kc (interact (binary (andNegI FI) L1 L2) Com OCom FI E1 E2) F (interact L1 Com OCom1 (l FI) E1 E2) (interact L2 OCom1 OCom (r FI) E1 E2) :- !.
