@@ -18,19 +18,15 @@ type !-!     form -> form -> form.
 type !+!     form -> form -> form.
 
 /* Modalities */
-type dia   form -> form.
-type box   form -> form.
-
-/* Quantification */
-type some   (term -> form) -> form.
-type all    (term -> form) -> form.
+type dia1   form -> form.
+type box1   form -> form.
+type dia2   form -> form.
+type box2   form -> form.
 
 infixr &-&, &+& 136.
 infixr !-!,!+! 136.
 
-
 type n, p atm -> form.
-
 
 type unfK list lform -> seq.
 type foc lform -> seq.

@@ -19,8 +19,10 @@ type releaseI inference.
 type initialI index -> inference.
 type orNegI index -> inference.
 type andNegI index -> inference.
-type boxI index -> inference.
-type diaI index -> inference.
+type box2I index -> inference.
+type dia2I index -> inference.
+type box1I index -> inference.
+type dia1I index -> inference.
 
 type no_index index.
 type no_term term.
