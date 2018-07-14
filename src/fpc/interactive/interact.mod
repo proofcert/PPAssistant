@@ -64,7 +64,7 @@ dia1_ke (interact (unary (dia1I FI) L) [W|Com] OCom FI E1 E2) _ W' (interact L C
   apply_vars W E1 W'.
 
 
-box2_kc (interact (unary (box2I FI) L) Com OCom FI E1 E2) F (Eigen\ (interact L) Com OCom (u FI) [eigen FI Eigen| E1] E2) :-
+box2_kc (interact (unary (box2I FI) L) Com OCom FI E1 E2) F (Eigen\ (interact L) Com OCom (u FI) E1 [eigen FI Eigen| E2]) :-
   output std_out "Using world variable ",
   term_to_string FI S1,
   output std_out S1,
@@ -80,4 +80,9 @@ dia2_ke (interact (unary (dia2I no_index) leaf) [] _ FI _ _) F _ _ :- !,
   output std_out "\n", fail.
 
 dia2_ke (interact (unary (dia2I FI) L) [W|Com] OCom FI E1 E2) _ W' (interact L Com OCom (u FI) E1 E2) :-
-  apply_vars W E1 W'.
+  apply_vars W E2 W'.
+
+apply_vars T [] T.
+apply_vars T [eigen _ X|L] T' :-
+  apply_vars (T X) L T'.
+
